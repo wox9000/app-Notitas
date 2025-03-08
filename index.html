@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>App Notitas by wox9000</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1 class="no-print">App Notitas</h1>
+        <!-- Sección de edición (no se imprime) -->
+        <div id="editor" class="no-print">
+            <div class="editor-container">
+                <textarea id="mensaje" placeholder="Escribe tu nota aquí..." maxlength="500" style="width: 10cm;"></textarea>
+            </div>
+            <div class="botones">
+                <button onclick="mostrarPreview()">Previsualizar</button>
+            </div>
+        </div>
+        <!-- Sección de vista previa -->
+        <div id="preview" style="display: none;">
+            <!-- Contenedor donde se insertarán las cajas de la nota -->
+            <div id="preview-cajas"></div>
+            <div class="botones no-print">
+                <button onclick="volver()">Volver</button>
+                <button onclick="imprimir()">Imprimir</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>    
+</body>
+</html>

@@ -1,0 +1,119 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e0f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+h1 {
+    color: #01579b;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.contenedor {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+}
+
+/* Editor centrado */
+.editor-container {
+    display: flex;
+    justify-content: center;
+}
+
+textarea {
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    resize: none;
+    font-size: 1.1em;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    overflow-y: hidden;
+}
+
+textarea:focus {
+    outline: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+button {
+    background-color: #03a9f4;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 0 8px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0288d1;
+}
+
+/* Estilo para las cajas de nota en la vista previa */
+.nota {
+    width: 10cm;
+    border: 1px solid #000;
+    padding: 5px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    margin: 0.3mm;
+}
+
+/* Contenedor de las cajas usando grid para 2 columnas fijas */
+#preview-cajas {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 0.3mm;
+    justify-content: center;
+    width: 200mm;
+    margin: 0 auto;
+    padding-bottom: 20px; 
+    min-height: 100vh;    /* Ajusta el espacio para que los botones no queden cubiertos */
+}
+#preview:target ~ .footer {
+    display: none;
+}
+
+/* Regla para que elementos con clase "no-print" se oculten al imprimir */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    body {
+        background-color: white;
+    }
+    .contenedor {
+        box-shadow: none;
+        padding: 0;
+    }
+    .nota {
+        page-break-inside: avoid; /* Evita cortes en las cajas */
+    }
+}
+
+/* Reducción de márgenes en impresión para aprovechar casi toda la hoja */
+@page {
+    size: A4;
+    margin: 5mm;
+}
