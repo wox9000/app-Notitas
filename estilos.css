@@ -82,6 +82,7 @@ button:hover {
 
 /* Contenedor de las cajas usando grid para 2 columnas fijas */
 #preview-cajas {
+    text-align: left;
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 0.3mm;
